@@ -5,14 +5,6 @@ export const TranscriptDisplay: React.FC<TranscriptDisplayProps> = ({
   transcript,
   interimTranscript,
 }) => {
-  const getWordCount = () => {
-    return transcript.split(" ").filter((word) => word.length > 0).length;
-  };
-
-  const getCharCount = () => {
-    return transcript.length;
-  };
-
   return (
     <div className="my-4">
       <div className="mb-2">
@@ -41,20 +33,6 @@ export const TranscriptDisplay: React.FC<TranscriptDisplayProps> = ({
           )}
         </div>
       </div>
-
-      {/* Stats */}
-      {transcript && (
-        <div className="mt-6 flex justify-between text-sm text-gray-500 bg-gray-50 p-4 rounded-xl">
-          <span>
-            کلمات:{" "}
-            <span className="font-bold text-gray-700">{getWordCount()}</span>
-          </span>
-          <span>
-            کاراکتر:{" "}
-            <span className="font-bold text-gray-700">{getCharCount()}</span>
-          </span>
-        </div>
-      )}
     </div>
   );
 };
